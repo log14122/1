@@ -95,9 +95,10 @@ public class RequestServletDemo extends HttpServlet {
         String agent = req.getHeader("user-agent");
 
         if (agent.contains("Chrome")) {
-            System.out.println("谷歌浏览器...");
+            System.out.println("谷歌浏览器");
         } else if (agent.contains("Microsoft Edge")) {
-            System.out.println("微软边缘浏览器...");
+            System.out.println("微软边缘浏览器" +
+                    "");
         }
     }
 
@@ -151,9 +152,9 @@ public class RequestServletDemo extends HttpServlet {
     }
 
     private void demo7(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("demo7被访问了...");
+        System.out.println("demo7被访问了");
 
-        req.setAttribute("msg", "hello~ Niko");
+        req.setAttribute("msg", "hello");
 
         req.getRequestDispatcher("/request/demo8").forward(req, resp);
     }
@@ -161,7 +162,7 @@ public class RequestServletDemo extends HttpServlet {
     private void demo8(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Object msg = req.getAttribute("msg");
         System.out.println(msg);
-        System.out.println("demo8被访问了。。。");
+        System.out.println("demo8被访问了");
 
     }
 
